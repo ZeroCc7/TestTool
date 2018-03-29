@@ -2,14 +2,13 @@ package sms;
 
 import util.UMD5;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class SendSms4Http {
@@ -34,22 +33,37 @@ public class SendSms4Http {
 //		sendSms("http://172.20.0.56:8866", "13960735706", "你好，你的验证码为082504【未来无线】");
 
 
-        //空号   17865964579 空号  15704901085外省  13774568228
+        //空号   17865964579 空号  15704901085外省  13774568228 18226916437
 //		sendSms("http://127.0.0.1:8860", "15108283734", "居家防暑妙招：冲温水澡更凉爽；放慢动作，避免剧烈活动；闭眼小睡降低温度；穿棉质服装利于排汗。退订回复TD【健康堂】");
 
 
 //		sendSms("http://172.20.0.56:8866", "13174537097", "您的短信验证码为：23422，请在10分钟内完成验证");
 //		sendSms("http://127.0.0.1:8860", "13960735706", "【江苏银行】短信验证码22222，您向6999尾号215账户转账1000元。请勿泄露验证码，谨防诈骗。如有疑问，请致电95319。");
 //		sendSms("http://127.0.0.1:8860", "13174537097", "您的短信验证码为：32323，请在10分钟内完成验证");
-//		for(int i = 0 ;i<100;i++){
-//			String p = getPhoneNum("131",1500); //yangxi 13960789441 ziming 15080457442
-        sendSms("http://127.0.0.1:8860", "13960789441", "您的验证码：85412。请尽快使用。【健康之路】");
+//			String p = getPhoneNum("131",1500); //yangxi 13960789441 ziming 15080457442 电信 郑铭浩
+//        sendSms("http://127.0.0.1:8860", "13960735706", "【好家居】您的短信验证码为：23422，请在10分钟内完成验证");
+
+//        String failName = "D:\\1.txt";
+        String msg = "【信息网】您的验证码为：20180126，验证码2分钟内有效，退订回T。";
+//        List<String> list = getSmsTaskMobileListByFile(failName);
+//        System.out.println(list.size());
+        String mobiles = ",13174537097,13960735706";
+//        for(int i = 0 ; i < list.size() ; i++){
+//            mobiles += "," + list.get(i);
+//            if(i % 10 == 0){
+//                sendSms("http://127.0.0.1:8860", mobiles.substring(1), msg);
+//                mobiles = "";
+//            }
+//        }
+        sendSms("http://127.0.0.1:8860", mobiles.substring(1), msg);
+
+
 //			Thread.sleep(2000);
 //		}
 
         //13365915899 电信 zmh
         //junyimsgid7113724786863767553
-        // LL 18396110335  ZB 13960735706 zb 13960735706   zz 15960393654
+        // LL 18396110335  zb 13960735706   zz 15960393654
 
 		/*
 		 * 移动 ： 13960735706 值班
@@ -156,4 +170,5 @@ public class SendSms4Http {
         }
         return mobileS;
     }
+
 }
